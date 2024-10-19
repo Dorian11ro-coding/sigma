@@ -1,14 +1,8 @@
-import webbrowser
+import time
 
+from selenium import webdriver
 
-
-num_1 = input("num 1:")
-
-num_2 = input("num 2:")
-
-num_1 = int(num_1)
-num_2 = int(num_2)
-if num_2!=0:
-    print(num_1 / num_2)
-elif num_2==0:
-    webbrowser.open("https://www.youtube.com/watch?v=lg0-GF6pAsg")
+driver = webdriver.Chrome()
+driver.maximize_window()
+driver.get('https://momazosdiego.com/momazo.mp4')
+time.sleep(500000)
