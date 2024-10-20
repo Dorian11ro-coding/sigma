@@ -36,15 +36,15 @@ def momazosdiego():
 
 
 def momazospablo():
-    play_video('momazos pablo.mp4', 6.5)
+    play_video('Pablo.mp4', 6.5)
 
 
 def momazosluis():
-    play_video('Momazos Luis.mp4', 7)
+    play_video('Luis.mp4', 7)
 
 
 def momazosjuan():
-    play_video('momazos Jua.mp4', 15)
+    play_video('Juan.mp4', 15)
 
 
 # Call the functions
