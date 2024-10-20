@@ -48,7 +48,9 @@ def momazosjuan():
 
 
 # Call the functions
-momazosdiego()
-momazospablo()
-momazosluis()
-momazosjuan()
+while True:
+    momazosdiego()
+    momazospablo()
+    momazosluis()
+    momazosjuan()
+
