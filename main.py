@@ -1,36 +1,41 @@
 import time
-
 from selenium import webdriver
-driver = webdriver.Chrome()
-def momazosdiego():
+import os
+
+
+def get_file_path(filename):
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(current_dir, filename)
+
+    if not os.path.exists(file_path):
+        file_path = input(f"Enter the full path for {filename}: ")
+
+    return f"file:///{file_path}"
+
+
+def play_video(filename, duration):
     driver = webdriver.Chrome()
     driver.maximize_window()
-    driver.get('file:///Users/scarlatdorianandrei/PycharmProjects/sigma/diego.mp4')
-    time.sleep(13)
+    video_path = get_file_path(filename)
+    driver.get(video_path)
+    time.sleep(duration)
     driver.quit()
+
+
+def momazosdiego():
+    play_video('diego.mp4', 13)
+
 
 def momazospablo():
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-    driver.get("file:///Users/scarlatdorianandrei/PycharmProjects/sigma/momazos%20pablo.mp4")
-    driver.maximize_window()
-    time.sleep(6.5)
-    driver.quit()
+    play_video('momazos pablo.mp4', 6.5)
+
 
 def momazosluis():
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-    driver.get("file:///Users/scarlatdorianandrei/PycharmProjects/sigma/Momazos%20Luis.mp4")
-    time.sleep(7)
-    driver.quit()
+    play_video('Momazos Luis.mp4', 7)
+
 
 def momazosjuan():
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-    driver.get("file:///Users/scarlatdorianandrei/PycharmProjects/sigma/momazos%20Jua.mp4")
-    time.sleep(15)
-    driver.quit()
-
+    play_video('momazos Jua.mp4', 15)
 
 
 momazosdiego()
